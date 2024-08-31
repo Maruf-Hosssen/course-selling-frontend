@@ -2,6 +2,7 @@ import Banner from '@/component/banner/banner';
 import Courses from '@/component/courses/course';
 import Goals from '@/component/gaols/Goals';
 import Trusted from '@/component/trusted/Trusted';
+import Why from '@/component/whyWorks/Why';
 import { Box, Container } from '@mui/material';
 import React from 'react';
 
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Banner></Banner>
       <Trusted></Trusted>
       <Courses></Courses>
+      <Why></Why>
       <Goals></Goals>
     </Box>
   );

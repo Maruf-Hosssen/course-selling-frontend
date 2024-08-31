@@ -18,6 +18,7 @@ import Divider from '@mui/material/Divider';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Menu, MenuItem } from '@mui/material';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -114,7 +115,6 @@ const Navbar = () => {
               <IconButton
                 size="large"
                 edge="start"
-                color="inherit"
                 aria-label="menu"
                 onClick={handleDrawerToggle}
               >
@@ -148,6 +148,10 @@ const Navbar = () => {
                     {item.label}
                   </Button>
                 ))}
+                <Button variant="outlined">
+                  {' '}
+                  <Link href="">Login</Link>
+                </Button>
               </Box>
 
               <Box sx={{ flexGrow: 0 }}>
