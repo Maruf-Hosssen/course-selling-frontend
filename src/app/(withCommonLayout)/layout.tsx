@@ -4,14 +4,12 @@ import { Box } from '@mui/material';
 import React from 'react';
 import HomePage from './page';
 
-const layout = () => {
+const Layout = () => {
   return (
     <Box>
-      <Navbar></Navbar>
       <HomePage></HomePage>
-      <Footer></Footer>
     </Box>
   );
 };
 
-export default layout;
+export default Layout;

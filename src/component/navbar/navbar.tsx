@@ -66,6 +66,9 @@ const Navbar = () => {
           src="/static/images/avatar/2.jpg"
           sx={{ mx: 'auto', my: 2 }}
         />
+        <Button sx={{}} variant="contained">
+          Edit Profile
+        </Button>
       </Box>
       <Divider />
       <List>
@@ -75,6 +78,15 @@ const Navbar = () => {
           </ListItem>
         ))}
       </List>
+      <Box>
+        <Button variant="outlined" sx={{ display: 'block', width: '100px' }}>
+          {' '}
+          <Link href="/login">Login</Link>
+        </Button>
+        <Button sx={{ display: 'block', width: '100px' }} variant="contained">
+          <Link href="">Logout</Link>
+        </Button>
+      </Box>
     </Box>
   );
 
@@ -150,7 +162,10 @@ const Navbar = () => {
                 ))}
                 <Button variant="outlined">
                   {' '}
-                  <Link href="">Login</Link>
+                  <Link href="/login">Login</Link>
+                </Button>
+                <Button sx={{ ml: '10px' }} variant="contained">
+                  <Link href="">Logout</Link>
                 </Button>
               </Box>
 

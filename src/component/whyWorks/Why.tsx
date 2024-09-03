@@ -32,7 +32,7 @@ const Why = () => {
           }}
         >
           <Image src={learning} alt="learning" height={100} width={100}></Image>
-          <Typography sx={{ fontSize: '25px', color: 'text.seconday' }}>
+          <Typography sx={{ fontSize: '25px', color: 'text.secondary' }}>
             Personalized learning
           </Typography>
           <Typography sx={{ color: 'text.secondary', textAlign: 'center' }}>
@@ -51,7 +51,7 @@ const Why = () => {
           }}
         >
           <Image src={content} alt="content" height={100} width={100}></Image>
-          <Typography sx={{ fontSize: '25px', color: 'text.seconday' }}>
+          <Typography sx={{ fontSize: '25px', color: 'text.secondary' }}>
             Trusted content
           </Typography>
           <Typography sx={{ color: 'text.secondary', textAlign: 'center' }}>
@@ -70,7 +70,7 @@ const Why = () => {
           }}
         >
           <Image src={tool} alt="tool" height={100} width={100}></Image>
-          <Typography sx={{ fontSize: '25px', color: 'text.seconday' }}>
+          <Typography sx={{ fontSize: '25px', color: 'text.secondary' }}>
             Tools to empower teachers
           </Typography>
           <Typography sx={{ color: 'text.secondary', textAlign: 'center' }}>

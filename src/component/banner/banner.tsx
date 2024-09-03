@@ -42,12 +42,12 @@ const Banner = () => {
         </Typography>
         <Button
           sx={{
-            backgroundColor: 'primary.main',
             color: 'primary.light',
             px: '15px',
             py: '8px',
             fontSize: '1rem',
           }}
+          variant="contained"
         >
           Explore Now
         </Button>
