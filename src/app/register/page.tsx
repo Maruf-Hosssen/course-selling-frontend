@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import {
   Box,
   Button,
@@ -12,7 +12,12 @@ import {
   FormControl,
   InputLabel,
 } from '@mui/material';
-import Image from 'next/image';
+
+import { registerUser } from '@/service/action/registerUser';
+import { toast } from 'react-toastify';
+import { userLogin } from '@/service/action/loginUser';
+import { useRouter } from 'next/navigation';
+import { storeUserInfo } from '@/service/auth.service';
 
 interface IFormInput {
   username: string;
@@ -21,18 +26,38 @@ interface IFormInput {
   role: string;
 }
 const RegisterPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<IFormInput>({
     defaultValues: {
       role: 'user', // Set default value to 'user'
     },
   });
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+  const onSubmit: SubmitHandler<IFormInput> = async (data: FieldValues) => {
     console.log(data);
+    try {
+      const res = await registerUser(data);
+
+      if (res?.data?._id) {
+        toast.success('User registered successfully');
+        const result = await userLogin({
+          username: data?.username,
+          password: data?.password,
+        });
+        if (result?.data?.token) {
+          storeUserInfo({ accessToken: result?.data?.token });
+          reset();
+          router.push('/');
+        }
+      }
+    } catch (err: any) {
+      console.log(err.message);
+    }
   };
 
   return (
